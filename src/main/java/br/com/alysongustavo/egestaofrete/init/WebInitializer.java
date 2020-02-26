@@ -1,5 +1,7 @@
 package br.com.alysongustavo.egestaofrete.init;
 
+import br.com.alysongustavo.egestaofrete.config.JpaConfig;
+import br.com.alysongustavo.egestaofrete.config.ServiceConfig;
 import br.com.alysongustavo.egestaofrete.config.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -7,7 +9,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{};
+        return new Class[]{JpaConfig.class, ServiceConfig.class};
     }
 
     @Override

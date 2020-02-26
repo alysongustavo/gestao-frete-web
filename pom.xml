@@ -19,6 +19,7 @@
 
         <!-- DEFINIÇÃO DAS VERSÕES DA LIB -->
         <springframework.version>4.3.26.RELEASE</springframework.version>
+        <spring.data.jpa.version>1.11.23.RELEASE</spring.data.jpa.version>
         <javax.servlet.api.version>3.1.0</javax.servlet.api.version>
         <postgresql.version>42.2.10</postgresql.version>
         <hibernate.version>5.4.12.Final</hibernate.version>
@@ -149,6 +150,14 @@
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${jcl-over-slf4j.version}</version>
+        </dependency>
+
+        <!-- Spring Data JPA -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring.data.jpa.version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- JPA / Hibernate -->
