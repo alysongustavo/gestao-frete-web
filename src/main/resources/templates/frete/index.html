@@ -10,8 +10,71 @@
 
 </head>
 <body>
-<main role="main" class="container" layout:fragment="conteudo">
-    <h1>Ola Mundo</h1>
+<main role="main" layout:fragment="conteudo">
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <form method="GET" class="form-inline" th:object="${orcamentoFilter}">
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="origem" class="sr-only">Origem</label>
+                    <input type="text" class="form-control" id="origem" placeholder="Origem" th:field="*{origem}" required>
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="destino" class="sr-only">Destino</label>
+                    <input type="text" class="form-control" id="destino" placeholder="Destino" th:field="*{destino}" required>
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="distancia" class="sr-only">Distancia</label>
+                    <input type="text" class="form-control" id="distancia" placeholder="Distancia" th:field="*{distancia}" required>
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <select class="form-control" id="tipoTransporte" th:field="*{tipoTransporte}">
+                        <option value="">Selecione o Tipo Transporte</option>
+                        <option value="A">Aereo</option>
+                        <option value="T">Terrestre</option>
+                    </select>
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <select class="form-control" id="prioridade" th:field="*{prioridade}" required>
+                        <option value="">Selecione a Prioridade</option>
+                        <option value="1">Menor Preco</option>
+                        <option value="2">Menor Tempo</option>
+                    </select>
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <button type="submit" class="btn btn-primary mb-2">Consultar</button>
+                </div>
+
+            </form>
+        </div><br/><br/><br/>
+        <div class="row justify-content-md-center">
+            <h3>Transportada(s) Encontrada(s)</h3>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-9">
+                <table class="table table-list-search">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Valor p/Km</th>
+                        <th>Tempo medio p/Km</th>
+                        <th>Tipo de Transporte</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="transportadora : ${transportadoras}">
+                        <td th:text="${transportadora.shippingCompany.name}">Transportadora 1</td>
+                        <td th:text="${transportadora.valuePerKm}">R$ 50,00</td>
+                        <td th:text="${transportadora.timeAvgPerKm}">60 segundos</td>
+                        <td th:text="${transportadora.typeTransport}">Terrestre</td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(transportadoras)}">
+                        <td colspan="4">Nenhuma transportadora encontrada</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </main>
 </body>
 </html>

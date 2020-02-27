@@ -17,10 +17,10 @@
 
     <body>
 
-        <div th:replace="layout/fragments/header :: layout-header"></div>
+        <header th:replace="layout/fragments/header :: layout-header"></header><br/><br/><br/><br/>
 
         <!-- Begin page content -->
-        <main role="main" class="container" layout:fragment="conteudo"></main>
+        <main role="main" layout:fragment="conteudo"></main>
 
         <div th:replace="layout/fragments/footer :: layout-footer"></div>
 

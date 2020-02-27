@@ -1,9 +1,11 @@
 package br.com.alysongustavo.egestaofrete.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "tb_shippingcompany")
+@Table(name = "tbl_shippingcompany")
 public class ShippingCompany {
 
     @Id
@@ -16,14 +18,8 @@ public class ShippingCompany {
 
     private String name;
 
-    @Column(name = "value_per_km")
-    private Double valuePerKm;
-
-    @Column(name = "type_transport")
-    private String typeTransport;
-
-    @Column(name = "time_avg_per_km")
-    private Integer timeAvgPerKm;
+    @OneToMany(mappedBy = "shippingCompany")
+    private List<ShippingCompanyInformation> shippingCompanyInformations = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -41,27 +37,8 @@ public class ShippingCompany {
         this.name = name;
     }
 
-    public Double getValuePerKm() {
-        return valuePerKm;
+    public List<ShippingCompanyInformation> getShippingCompanyInformations() {
+        return shippingCompanyInformations;
     }
 
-    public void setValuePerKm(Double valuePerKm) {
-        this.valuePerKm = valuePerKm;
-    }
-
-    public String getTypeTransport() {
-        return typeTransport;
-    }
-
-    public void setTypeTransport(String typeTransport) {
-        this.typeTransport = typeTransport;
-    }
-
-    public Integer getTimeAvgPerKm() {
-        return timeAvgPerKm;
-    }
-
-    public void setTimeAvgPerKm(Integer timeAvgPerKm) {
-        this.timeAvgPerKm = timeAvgPerKm;
-    }
 }

@@ -8,8 +8,8 @@
               jdbcUrl="jdbc:postgresql://localhost:5432/db_gestao_frete"
               user="postgres"
               password="computacao2014"
-              initialPoolSize="5"
-              minPoolSize="5"
-              maxPoolSize="5"
+              initialPoolSize="2"
+              minPoolSize="2"
+              maxPoolSize="2"
     />
 </Context>
