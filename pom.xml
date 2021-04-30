@@ -18,7 +18,7 @@
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 
         <!-- DEFINIÇÃO DAS VERSÕES DA LIB -->
-        <springframework.version>4.3.26.RELEASE</springframework.version>
+        <springframework.version>4.3.29.RELEASE</springframework.version>
         <spring.data.jpa.version>1.11.23.RELEASE</spring.data.jpa.version>
         <javax.servlet.api.version>3.1.0</javax.servlet.api.version>
         <postgresql.version>42.2.10</postgresql.version>
